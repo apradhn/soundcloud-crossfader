@@ -1,3 +1,3 @@
-$('.fader').mousedown(function(event) {
-  console.log(event);
+$(function() {
+  $('#fader').draggable({axis: 'x', containment: ".bottom"});
 });

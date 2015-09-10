@@ -57,7 +57,7 @@ a {
   align-items: center;
 }
 
-.bottom .fader {
+#fader {
   width: 20px;
   height: 50px;
   background: #F2F1EF;
