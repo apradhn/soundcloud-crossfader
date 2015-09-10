@@ -15,10 +15,10 @@ a {
 
 .deck {
   flex: 1;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   background: #EEEEEE;
+  flex-flow: column-reverse;
 }
 
 .deck li {
@@ -26,17 +26,14 @@ a {
 }
 .deck .search {
   flex: 1;
-  border: 1px solid black;
 }
 
 .deck .search-results {
   flex: 4;
-  border: 1px solid black;
 }
 
 .deck .widget {
   flex: 4;
-  border: 1px solid black;
   display: flex;
   align-items: center;
 }
@@ -50,10 +47,9 @@ a {
 
 .top {
   flex: 1;
-  border: 1px solid black;
 }
 
 .bottom {
   flex: 1;
-  border: 1px solid black;
+  background: #6C7A89;
 }
