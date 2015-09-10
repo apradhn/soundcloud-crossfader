@@ -52,4 +52,13 @@ a {
 .bottom {
   flex: 1;
   background: #6C7A89;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom .fader {
+  width: 20px;
+  height: 50px;
+  background: #F2F1EF;
 }
