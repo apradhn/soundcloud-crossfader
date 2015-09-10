@@ -25,10 +25,11 @@ $(function() {
     var path = '/users/' + userId + '/tracks';
     var html = '';
     SC.get(path, function(tracks) {
+      console.log(tracks);
       html += '<ul>';
-      tracks = tracks.slice(0, 6);
+      tracks = tracks.slice(0, 11);
       tracks.forEach(function(track) {
-        html += '<li>';
+        html += '<li class="track" data-track-id="'+track.id+'">';
         html += track.title;
         html += '</li>';
       });
@@ -37,4 +38,8 @@ $(function() {
     });
   });
 
+  $(document).on('click', '.track', function() {
+    var trackId = $(this).data('track-id');
+    console.log(trackId);
+  })
 });
