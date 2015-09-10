@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -18,13 +18,18 @@ a {
   border: 1px solid black;
   display: flex;
   flex-direction: column;
+  background: #EEEEEE;
+}
+
+.deck li {
+  list-style-type: none;
 }
 
 .crossfader {
   flex: 3;
 }
 
-.deck .search-user, .deck .search-results, .deck .tracks {
+.deck .search, .deck .search-results, .deck .tracks {
   flex: 1;
   border: 1px solid black;
 }
