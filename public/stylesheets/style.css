@@ -29,13 +29,18 @@ a {
   flex: 3;
 }
 
-.deck .search, .deck .search-results, .deck .tracks {
+.deck .search {
   flex: 1;
   border: 1px solid black;
 }
 
+.deck .search-results {
+  flex: 3;
+  border: 1px solid black;
+}
+
 .deck .widget {
-  flex: 1;
+  flex: 2;
   border: 1px solid black;
   display: flex;
   align-items: center;
