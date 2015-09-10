@@ -12,7 +12,7 @@ $(function() {
       list = '<ul>';
       users.forEach(function(user) {
         list += '<li class="user" data-user-id="' + user.id + '">';
-        list += user.full_name;
+        list += user.username;
         list += '</li>';
       });
       list += "</ul>";
@@ -29,7 +29,7 @@ $(function() {
       html += '<ul>';
       tracks = tracks.slice(0, 11);
       tracks.forEach(function(track) {
-        html += '<li class="track" data-track-id="'+track.id+'">';
+        html += '<li class="track" data-track-url="'+track.uri+'">';
         html += track.title;
         html += '</li>';
       });
@@ -39,7 +39,14 @@ $(function() {
   });
 
   $(document).on('click', '.track', function() {
-    var trackId = $(this).data('track-id');
-    console.log(trackId);
-  })
+    var trackUrl = $(this).data('track-url');
+    var iframe = $('.widget iframe')[0];
+    updateWidget(trackUrl, iframe)
+  });
+
+  function updateWidget(url, iframe) {
+    var iframeId = iframe.id;
+    var widget = SC.Widget(iframe);
+    widget.load(url);
+  }
 });
