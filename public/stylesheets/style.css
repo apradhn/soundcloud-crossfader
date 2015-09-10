@@ -9,12 +9,12 @@ a {
 
 .container {
   width: 100%;
-  height: 800px;
+  height: 600px;
   display: flex;
 }
 
 .deck {
-  flex: 4;
+  flex: 1;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
@@ -24,24 +24,36 @@ a {
 .deck li {
   list-style-type: none;
 }
-
-.crossfader {
-  flex: 3;
-}
-
 .deck .search {
   flex: 1;
   border: 1px solid black;
 }
 
 .deck .search-results {
-  flex: 3;
+  flex: 4;
   border: 1px solid black;
 }
 
 .deck .widget {
-  flex: 2;
+  flex: 4;
   border: 1px solid black;
   display: flex;
   align-items: center;
+}
+
+
+.center-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  flex: 1;
+  border: 1px solid black;
+}
+
+.bottom {
+  flex: 1;
+  border: 1px solid black;
 }
