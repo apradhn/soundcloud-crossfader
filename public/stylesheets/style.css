@@ -149,3 +149,12 @@ form button {
   justify-content: center;
   align-items: center;
 }
+
+.queue {
+  flex: 1;
+  background: #EEEEEE;
+}
+
+.queue h3 {
+  padding: 10px;
+}
