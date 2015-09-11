@@ -119,6 +119,7 @@ form button {
 
 .track {
   display: flex;
+  border-bottom: 1px solid #EEE;
 }
 
 .add {
