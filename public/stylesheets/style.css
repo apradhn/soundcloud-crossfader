@@ -80,12 +80,45 @@ a {
   background: #F2F1EF;
 }
 
-.track {
+
+form {
   display: flex;
   align-items: center;
-  padding-left: 10px;
+}
+
+input[type='text'] {
+  flex: 1;
+  margin: 0;
+  width: 100%;
+  border: solid 5px #c9c9c9;
+  transition: border 0.3s;
+  font-size: 18px;
+  padding: 5px;
+}
+
+input[type='text']:focus {
+  border: solid 5px #969696;
+}
+
+form button {
+  flex: 1;
+  font-size: 18px;
+}
+
+.track {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .track:hover {
   background: #EEEEEE;
+}
+
+.track-title {
+  font-weight: 600;
+}
+
+.track-title, .track .username {
+  flex: 1;
 }

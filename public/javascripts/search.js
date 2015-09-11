@@ -11,13 +11,20 @@ $(function() {
     var query = $(this).children('input[name="query"]').val();
     console.log(query);
     var list = '';
+    var trackTitle;
+
     SC.get('/tracks', {q: query}, function(tracks) {
       console.log(tracks);
-      tracks = tracks.slice(0, 6);
+      tracks = tracks.slice(0, 5);
       tracks.forEach(function(track) {
+        trackTitle = track.title;
+        if (trackTitle.length > 50) {
+          console.log(trackTitle);
+          trackTitle = trackTitle.slice(0, 47) + '...';
+        }
         list += '<div class="track" data-track-url="'+track.uri+'" data-deck="'+deck+'">';
-        list += track.title;
-        list += " / " + track.user.username;
+        list += '<div class="track-title">' + trackTitle + '</div>';
+        list += '<div class="username">' + track.user.username + '</div>';
         list += '</div>';
       });
       $('#' + deck + ' .search-results div').replaceWith(list);
