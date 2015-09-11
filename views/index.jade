@@ -10,8 +10,7 @@ block content
         button Search Track
       .search-results 
         h3 Search Results
-        ul
-          li.user
+        div
       .widget
         iframe( id="a-track" width='100%', height='100%', scrolling='no', frameborder='no', src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/217890037&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true&amp;single_active=false')
     .center-panel
@@ -19,14 +18,12 @@ block content
       .bottom
         #slider
           #fader
-    .deck
-      .deck#b
-        form.search(data-deck="b" action="#")
-          input(name="query" type="text" data-deck="b")
-          button Search Track
-        .search-results 
-          h3 Search Results
-          ul
-            li.user
-        .widget
-          iframe(id="b-track" auto_play="true" width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/8953621&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true&amp;single_active=false")
+    .deck#b
+      form.search(data-deck="b" action="#")
+        input(name="query" type="text" data-deck="b")
+        button Search Track
+      .search-results 
+        h3 Search Results
+        div
+      .widget
+        iframe(id="b-track" auto_play="true" width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/8953621&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true&amp;single_active=false")

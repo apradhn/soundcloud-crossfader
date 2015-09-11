@@ -9,19 +9,17 @@ $(function() {
     var nextSibling = $(this).next();
     var query = $(this).children('input[name="query"]').val();
     console.log(query);
-    var list;
+    var list = '';
     SC.get('/tracks', {q: query}, function(tracks) {
       console.log(tracks);
       tracks = tracks.slice(0, 6);
-      list = '<ul>';
       tracks.forEach(function(track) {
-        list += '<li class="track" data-track-url="'+track.uri+'" data-deck="'+deck+'">';
+        list += '<div class="track" data-track-url="'+track.uri+'" data-deck="'+deck+'">';
         list += track.title;
         list += " / " + track.user.username;
-        list += '</li>';
+        list += '</div>';
       });
-      list += "</ul>";
-      nextSibling.children('ul').replaceWith(list);
+      nextSibling.children('div').replaceWith(list);
     });
   });
 

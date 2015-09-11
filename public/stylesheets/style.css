@@ -21,9 +21,16 @@ a {
   flex-flow: column-reverse;
 }
 
-.deck li {
-  list-style-type: none;
+.deck .search-results {
+  display: flex;
+  flex-direction: column;
+  background: #FCFCFC;
 }
+
+.search-results h3, .search-results div {
+  flex: 1;
+}
+
 .deck .search {
   flex: 1;
 }
@@ -73,10 +80,12 @@ a {
   background: #F2F1EF;
 }
 
-.search-results {
-  background: #FCFCFC;
-}
 .track {
-  padding: 5px;
-  border-bottom: 2px solid #555; 
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.track:hover {
+  background: #EEEEEE;
 }
