@@ -1,8 +1,6 @@
 $(function() {
-  var iframe = $('#a .widget iframe')[0]; 
-  var aWidget = SC.Widget(iframe);
-  var bWidget = SC.Widget(iframe);  
-  console.log(bWidget);
+  var iframe = $('#a .widget iframe')[0];
+
   var center = $('#fader').position().left;
   var divisor = center * 2;
 
@@ -31,8 +29,8 @@ $(function() {
       aVolume = 0.5 + bVolume;
     }
     console.log('bVolume: ' + bVolume);
-    SC.Widget('track-b').setVolume(bVolume);
-    SC.Widget('track-a').setVolume(aVolume);
+    SC.Widget('b-track').setVolume(bVolume);
+    SC.Widget('a-track').setVolume(aVolume);
   }});
 });
 
