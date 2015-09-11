@@ -18,12 +18,26 @@ a {
   display: flex;
   flex-direction: column;
   background: #EEEEEE;
-  flex-flow: column-reverse;
 }
 
-.deck li {
-  list-style-type: none;
+.deck .search-results {
+  display: flex;
+  flex-direction: column;
+  background: #FCFCFC;
 }
+
+.search h3 {
+  padding: 10px;
+}
+
+.search-results h3{
+  flex: 1;
+}
+
+.search-results h3 {
+  padding: 10px;
+}
+
 .deck .search {
   flex: 1;
 }
@@ -32,9 +46,14 @@ a {
   flex: 4;
 }
 
+.hide {
+  display: none;
+}
+
 .deck .widget {
   flex: 4;
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -71,4 +90,71 @@ a {
   width: 50px;
   height: 50px;
   background: #F2F1EF;
+}
+
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+input[type='text'] {
+  flex: 1;
+  margin: 10px;
+  width: 100%;
+  border: solid 5px #c9c9c9;
+  transition: border 0.3s;
+  font-size: 18px;
+  padding: 5px;
+}
+
+input[type='text']:focus {
+  border: solid 5px #969696;
+}
+
+form button {
+  flex: 1;
+  font-size: 18px;
+}
+
+.track {
+  display: flex;
+}
+
+.add {
+  flex: 1;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  flex: 8;
+}
+
+.track:hover {
+  background: #EEEEEE;
+}
+
+.track-title {
+  font-weight: 600;
+}
+
+.track-title, .track .username {
+  flex: 1;
+}
+
+.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.queue {
+  flex: 1;
+  background: #EEEEEE;
+}
+
+.queue h3 {
+  padding: 10px;
 }

@@ -5,28 +5,83 @@ block content
   p Welcome to #{title}
   .container
     .deck#a
-      form.search(data-deck="a" action="#")
-        input(name="query" type="text")
-        button Search Track
+      .widget
+        h3 A Track
+        iframe(id="a-track" width='100%', height='100%', scrolling='no', frameborder='no', src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/217890037&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true&amp;single_active=false')
+      .search
+        h3 Search
+        form(data-deck="a" action="#")
+          input(name="query" type="text" placeholder="Search Track...")      
       .search-results 
         h3 Search Results
-        ul
-          li.user
-      .widget
-        iframe( id="a-track" width='100%', height='100%', scrolling='no', frameborder='no', src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/217890037&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true&amp;single_active=false')
+        .hide 
+          .track
+            .add
+            .track-info
+              .track-title
+              .username
+          .track
+            .add
+            .track-info
+              .track-title
+              .username
+          .track
+            .add
+            .track-info
+              .track-title
+              .username
+          .track
+            .add
+            .track-info
+              .track-title
+              .username
+          .track
+            .add
+            .track-info
+              .track-title
+              .username
+      .queue
+        h3 Queue
     .center-panel
       .top
       .bottom
         #slider
           #fader
-    .deck
-      .deck#b
-        form.search(data-deck="b" action="#")
-          input(name="query" type="text" data-deck="b")
-          button Search Track
-        .search-results 
-          h3 Search Results
-          ul
-            li.user
-        .widget
-          iframe(id="b-track" auto_play="true" width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/8953621&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true&amp;single_active=false")
+    .deck#b
+      .widget 
+        h3 B Track
+        iframe(id="b-track" auto_play="true" width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/8953621&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true&amp;single_active=false")      
+      .search
+        h3 Search
+        form(data-deck="b" action="#")
+          input(name="query" type="text" data-deck="b" placeholder="Search Track...")        
+      .search-results 
+        h3 Search Results
+        .hide 
+          .track
+            .add
+            .track-info
+              .track-title
+              .username
+          .track
+            .add
+            .track-info
+              .track-title
+              .username
+          .track
+            .add
+            .track-info
+              .track-title
+              .username
+          .track
+            .add
+            .track-info
+              .track-title
+              .username
+          .track
+            .add
+            .track-info
+              .track-title
+              .username
+      .queue  
+        h3 Queue
