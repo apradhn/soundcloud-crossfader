@@ -26,6 +26,10 @@ a {
   background: #FCFCFC;
 }
 
+.search h3 {
+  padding: 10px;
+}
+
 .search-results h3, .search-results div {
   flex: 1;
 }

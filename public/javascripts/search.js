@@ -3,7 +3,7 @@ $(function() {
     client_id: '81eaf8f6864fc6b8e13419c0628918d6'
   });  
 
-  $('.search').submit(function(event) { 
+  $('.search form').submit(function(event) { 
     event.preventDefault();
     var deck = $(this).data('deck');
     var parent = $("#"+deck);
