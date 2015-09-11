@@ -31,6 +31,10 @@ a {
   flex: 1;
 }
 
+.search-results h3 {
+  padding: 10px;
+}
+
 .deck .search {
   flex: 1;
 }
