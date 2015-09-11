@@ -72,3 +72,11 @@ a {
   height: 50px;
   background: #F2F1EF;
 }
+
+.search-results {
+  background: #FCFCFC;
+}
+.track {
+  padding: 5px;
+  border-bottom: 2px solid #555; 
+}

@@ -10,7 +10,7 @@ $(function() {
     var query = $(this).children('input[name="query"]').val();
     console.log(query);
     var list;
-    SC.get('/tracks', {q: query, license: 'cc-by-sa'}, function(tracks) {
+    SC.get('/tracks', {q: query}, function(tracks) {
       console.log(tracks);
       tracks = tracks.slice(0, 6);
       list = '<ul>';
