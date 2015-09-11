@@ -2,6 +2,7 @@ $(function() {
   var iframe = $('#a .widget iframe')[0]; 
   var aWidget = SC.Widget(iframe);
   var bWidget = SC.Widget(iframe);  
+  console.log(bWidget);
   var center = $('#fader').position().left;
   var divisor = center * 2;
 
@@ -11,24 +12,27 @@ $(function() {
     var span = parentWidth - faderWidth;
     var offset = $(this).offset();
     var position = $(this).position();
-    var diff = position.left - center;
+    var bVolume = position.left - center;
+    var aVolume;
 
     console.log("span: " + span);
     console.log("offset: " + offset.left);
     console.log("position: " + position.left);
     console.log(event);
     console.log("center: " + center);
-    diff += (span / 2);
-    diff /= (span * 0.01);
-    diff *= 0.01;
-    diff = Number(diff.toString().slice(0, 4));
-    console.log('diff: ' + diff);
-    SC.Widget('track-b').setVolume(diff);
+    bVolume += (span / 2);
+    bVolume /= (span * 0.01);
+    bVolume *= 0.01;
+    bVolume = Number(bVolume.toString().slice(0, 4));
+    aVolume = bVolume;
+    if (bVolume >= 0.5) {
+      aVolume = 1 - bVolume;
+    } else {
+      aVolume = 0.5 + bVolume;
+    }
+    console.log('bVolume: ' + bVolume);
+    SC.Widget('track-b').setVolume(bVolume);
+    SC.Widget('track-a').setVolume(aVolume);
   }});
-
-  // $('#fader').click(function(event) {
-  //   console.log(event);
-  //   console.log($(this).position().left);
-  // });
 });
 
