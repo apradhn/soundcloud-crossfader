@@ -39,7 +39,7 @@ $(function() {
   function updateWidget(url, iframe) {
     var iframeId = iframe.id;
     var widget = SC.Widget(iframe);
-    var options = {"single_active": false}
+    var options = {"single_active": false, "visual": true}
     widget.load(url, options);
   }
 });
