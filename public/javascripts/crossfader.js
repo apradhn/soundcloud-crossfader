@@ -11,11 +11,11 @@ $(function() {
     var bVolume = position.left - center;
     var aVolume;
 
-    console.log("span: " + span);
-    console.log("offset: " + offset.left);
-    console.log("position: " + position.left);
-    console.log(event);
-    console.log("center: " + center);
+    // console.log("span: " + span);
+    // console.log("offset: " + offset.left);
+    // console.log("position: " + position.left);
+    // console.log(event);
+    // console.log("center: " + center);
     bVolume += (span / 2);
     bVolume /= (span * 0.01);
     bVolume *= 0.01;
