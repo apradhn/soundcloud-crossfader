@@ -7,7 +7,8 @@ $(function() {
     console.log(trackTitle);
     var queueItem = $('<div/>', {
       addClass: 'queue-item',
-      html: trackTitle
+      html: trackTitle,
+      attr: {'data-track-url': trackUrl}
     });
     $('#'+deck+' .queue').append(queueItem);
   });
@@ -26,8 +27,6 @@ $(function() {
         console.log(track);
         trackUrl = track.data('track-url');
         updateWidget(trackUrl, iframe);
-      } else {
-
       }
     })
   });
