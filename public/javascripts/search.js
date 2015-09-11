@@ -12,6 +12,7 @@ $(function() {
     console.log(query);
     var list = '';
     var trackTitle;
+    var searchResults = $('#' + deck + ' .search-results')
 
     SC.get('/tracks', {q: query}, function(tracks) {
       console.log(tracks);
@@ -30,7 +31,7 @@ $(function() {
         list += '</div>';
         list += '</div>';
       });
-      $('#' + deck + ' .search-results div').replaceWith(list);
+      searchResults.html(list);
     });
   });
 

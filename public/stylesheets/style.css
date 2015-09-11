@@ -153,8 +153,18 @@ form button {
 .queue {
   flex: 1;
   background: #EEEEEE;
+  display: flex;
+  flex-direction: column;
 }
 
 .queue h3 {
   padding: 10px;
+  flex: 1;
+}
+
+.queue div {
+  flex: 1;
+  padding: 10px;
+  background: #FCFCFC;
+  border-bottom: 1px solid #EEEEEE;
 }
