@@ -45,6 +45,6 @@ function updateWidget(url, iframe) {
   console.log(url);
   console.log(iframe);
   var widget = SC.Widget(iframe);
-  var options = {"single_active": false, "visual": true}
+  var options = {"single_active": false, "visual": true, "auto_play": true}
   widget.load(url, options);
 }
