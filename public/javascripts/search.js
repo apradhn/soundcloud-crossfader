@@ -23,7 +23,7 @@ $(function() {
           trackTitle = trackTitle.slice(0, 37) + '...';
         }
         list += '<div class="track">';
-        list += '<div class="add">add</div>';
+        list += '<div class="add" data-track-url="'+track.uri+'" data-deck="'+deck+'" data-artwork-url="'+track.artwork_url+'">add</div>';
         list += '<div class="track-info" data-track-url="'+track.uri+'" data-deck="'+deck+'">';
         list += '<div class="track-title">' + trackTitle + '</div>';
         list += '<div class="username">' + track.user.username + '</div>';
@@ -32,10 +32,6 @@ $(function() {
       });
       $('#' + deck + ' .search-results div').replaceWith(list);
     });
-  });
-
-  $(document).on('click', '.user', function() {
-
   });
 
   $(document).on('click', '.track-info', function() {
