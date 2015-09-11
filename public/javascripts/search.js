@@ -6,6 +6,7 @@ $(function() {
   $('.search').submit(function(event) { 
     event.preventDefault();
     var deck = $(this).data('deck');
+    var parent = $("#"+deck);
     var nextSibling = $(this).next();
     var query = $(this).children('input[name="query"]').val();
     console.log(query);
@@ -19,7 +20,7 @@ $(function() {
         list += " / " + track.user.username;
         list += '</div>';
       });
-      nextSibling.children('div').replaceWith(list);
+      $('#' + deck + ' .search-results div').replaceWith(list);
     });
   });
 
