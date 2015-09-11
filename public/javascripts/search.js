@@ -19,11 +19,11 @@ $(function() {
       tracks.forEach(function(track) {
         trackTitle = track.title;
         if (trackTitle.length > 40) {
-          console.log(trackTitle);
           trackTitle = trackTitle.slice(0, 37) + '...';
         }
         list += '<div class="track">';
-        list += '<div class="add" data-track-url="'+track.uri+'" data-deck="'+deck+'" data-artwork-url="'+track.artwork_url+'">add</div>';
+        list += '<div class="add" data-track-url="'+track.uri+'" data-deck="'+deck+'" data-artwork-url="'+track.artwork_url+'" data-track-title="'+trackTitle+'">';
+        list += 'add</div>';
         list += '<div class="track-info" data-track-url="'+track.uri+'" data-deck="'+deck+'">';
         list += '<div class="track-title">' + trackTitle + '</div>';
         list += '<div class="username">' + track.user.username + '</div>';
