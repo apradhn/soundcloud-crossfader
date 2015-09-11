@@ -20,7 +20,10 @@ $(function() {
     console.log("center: " + center);
     diff += (span / 2);
     diff /= (span * 0.01);
+    diff *= 0.01;
+    diff = Number(diff.toString().slice(0, 4));
     console.log('diff: ' + diff);
+    SC.Widget('track-b').setVolume(diff);
   }});
 
   // $('#fader').click(function(event) {
