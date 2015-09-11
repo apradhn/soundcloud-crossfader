@@ -18,13 +18,16 @@ $(function() {
       tracks = tracks.slice(0, 5);
       tracks.forEach(function(track) {
         trackTitle = track.title;
-        if (trackTitle.length > 50) {
+        if (trackTitle.length > 40) {
           console.log(trackTitle);
-          trackTitle = trackTitle.slice(0, 47) + '...';
+          trackTitle = trackTitle.slice(0, 37) + '...';
         }
-        list += '<div class="track" data-track-url="'+track.uri+'" data-deck="'+deck+'">';
+        list += '<div class="track">';
+        list += '<div class="add">add</div>';
+        list += '<div class="track-info" data-track-url="'+track.uri+'" data-deck="'+deck+'">';
         list += '<div class="track-title">' + trackTitle + '</div>';
         list += '<div class="username">' + track.user.username + '</div>';
+        list += '</div>';
         list += '</div>';
       });
       $('#' + deck + ' .search-results div').replaceWith(list);
@@ -35,7 +38,7 @@ $(function() {
 
   });
 
-  $(document).on('click', '.track', function() {
+  $(document).on('click', '.track-info', function() {
     var trackUrl = $(this).data('track-url');
     var deck = $(this).data('deck');
     var iframe = $('#'+deck+' .widget iframe')[0];

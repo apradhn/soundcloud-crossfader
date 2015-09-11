@@ -30,7 +30,7 @@ a {
   padding: 10px;
 }
 
-.search-results h3, .search-results div {
+.search-results h3{
   flex: 1;
 }
 
@@ -44,6 +44,10 @@ a {
 
 .deck .search-results {
   flex: 4;
+}
+
+.hide {
+  display: none;
 }
 
 .deck .widget {
@@ -114,9 +118,18 @@ form button {
 }
 
 .track {
-  padding: 10px;
+  display: flex;
+}
+
+.add {
+  flex: 1;
+}
+
+.track-info {
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  flex: 8;
 }
 
 .track:hover {
@@ -129,4 +142,10 @@ form button {
 
 .track-title, .track .username {
   flex: 1;
+}
+
+.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
