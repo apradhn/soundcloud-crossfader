@@ -3,33 +3,38 @@ $(function() {
     client_id: '81eaf8f6864fc6b8e13419c0628918d6'
   });  
 
-  $('.search').submit(function(event) { 
+  $('.search form').submit(function(event) { 
     event.preventDefault();
     var deck = $(this).data('deck');
+    var parent = $("#"+deck);
     var nextSibling = $(this).next();
     var query = $(this).children('input[name="query"]').val();
     console.log(query);
-    var list;
-    SC.get('/tracks', {q: query, license: 'cc-by-sa'}, function(tracks) {
+    var list = '';
+    var trackTitle;
+
+    SC.get('/tracks', {q: query}, function(tracks) {
       console.log(tracks);
-      tracks = tracks.slice(0, 6);
-      list = '<ul>';
+      tracks = tracks.slice(0, 5);
       tracks.forEach(function(track) {
-        list += '<li class="track" data-track-url="'+track.uri+'" data-deck="'+deck+'">';
-        list += track.title;
-        list += " / " + track.user.username;
-        list += '</li>';
+        trackTitle = track.title;
+        if (trackTitle.length > 40) {
+          console.log(trackTitle);
+          trackTitle = trackTitle.slice(0, 37) + '...';
+        }
+        list += '<div class="track">';
+        list += '<div class="add" data-track-url="'+track.uri+'" data-deck="'+deck+'" data-artwork-url="'+track.artwork_url+'">add</div>';
+        list += '<div class="track-info" data-track-url="'+track.uri+'" data-deck="'+deck+'">';
+        list += '<div class="track-title">' + trackTitle + '</div>';
+        list += '<div class="username">' + track.user.username + '</div>';
+        list += '</div>';
+        list += '</div>';
       });
-      list += "</ul>";
-      nextSibling.children('ul').replaceWith(list);
+      $('#' + deck + ' .search-results div').replaceWith(list);
     });
   });
 
-  $(document).on('click', '.user', function() {
-
-  });
-
-  $(document).on('click', '.track', function() {
+  $(document).on('click', '.track-info', function() {
     var trackUrl = $(this).data('track-url');
     var deck = $(this).data('deck');
     var iframe = $('#'+deck+' .widget iframe')[0];
