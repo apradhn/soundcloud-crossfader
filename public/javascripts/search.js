@@ -5,9 +5,9 @@ $(function() {
 
   $('.search').submit(function(event) { 
     event.preventDefault();
-    var deck = $(this).next()
-    var query = $('input[name="query"]').val();
-    console.log(deck);
+    var deck = $(this).data('deck');
+    var nextSibling = $(this).next();
+    var query = $(this).children('input[name="query"]').val();
     console.log(query);
     var list;
     SC.get('/tracks', {q: query, license: 'cc-by-sa'}, function(tracks) {
@@ -15,13 +15,13 @@ $(function() {
       tracks = tracks.slice(0, 6);
       list = '<ul>';
       tracks.forEach(function(track) {
-        list += '<li class="track" data-track-url="' + track.uri+ '">';
+        list += '<li class="track" data-track-url="'+track.uri+'" data-deck="'+deck+'">';
         list += track.title;
         list += " / " + track.user.username;
         list += '</li>';
       });
       list += "</ul>";
-      deck.children('ul').replaceWith(list);
+      nextSibling.children('ul').replaceWith(list);
     });
   });
 
@@ -31,13 +31,15 @@ $(function() {
 
   $(document).on('click', '.track', function() {
     var trackUrl = $(this).data('track-url');
-    var iframe = $('.widget iframe')[0];
+    var deck = $(this).data('deck');
+    var iframe = $('#'+deck+' .widget iframe')[0];
     updateWidget(trackUrl, iframe)
   });
 
   function updateWidget(url, iframe) {
     var iframeId = iframe.id;
     var widget = SC.Widget(iframe);
-    widget.load(url);
+    var options = {"single_active": false, "visual": true}
+    widget.load(url, options);
   }
 });
