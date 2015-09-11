@@ -9,13 +9,11 @@ $(function() {
     var parent = $("#"+deck);
     var nextSibling = $(this).next();
     var query = $(this).children('input[name="query"]').val();
-    console.log(query);
     var list = '';
     var trackTitle;
     var searchResults = $('#' + deck + ' .search-results')
 
     SC.get('/tracks', {q: query}, function(tracks) {
-      console.log(tracks);
       tracks = tracks.slice(0, 5);
       tracks.forEach(function(track) {
         trackTitle = track.title;
@@ -41,11 +39,12 @@ $(function() {
     var iframe = $('#'+deck+' .widget iframe')[0];
     updateWidget(trackUrl, iframe)
   });
-
-  function updateWidget(url, iframe) {
-    var iframeId = iframe.id;
-    var widget = SC.Widget(iframe);
-    var options = {"single_active": false, "visual": true}
-    widget.load(url, options);
-  }
 });
+
+function updateWidget(url, iframe) {
+  console.log(url);
+  console.log(iframe);
+  var widget = SC.Widget(iframe);
+  var options = {"single_active": false, "visual": true}
+  widget.load(url, options);
+}

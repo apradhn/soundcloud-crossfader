@@ -1,6 +1,4 @@
 $(function() {
-  var iframe = $('#a .widget iframe')[0];
-
   var center = $('#fader').position().left;
   var divisor = center * 2;
 

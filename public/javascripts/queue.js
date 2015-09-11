@@ -11,4 +11,24 @@ $(function() {
     });
     $('#'+deck+' .queue').append(queueItem);
   });
+
+  $('.deck').each(function() {
+    var id = this.id;
+    var widget = SC.Widget(id+'-track');
+    var trackUrl;
+
+    widget.bind(SC.Widget.Events.FINISH, function() {
+      var queueItems = $('#'+id+' .queue .queue-item');
+
+      if (queueItems.length) {
+        var track = queueItems;
+        var iframe = $('#'+id+' iframe')[0];
+        console.log(track);
+        trackUrl = track.data('track-url');
+        updateWidget(trackUrl, iframe);
+      } else {
+
+      }
+    })
+  });
 });
